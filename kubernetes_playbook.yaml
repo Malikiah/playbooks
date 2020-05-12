@@ -1,0 +1,30 @@
+- name: Kubernetes Playbook
+  hosts: master_nodes worker_nodes
+  connection: ssh
+  become: yes
+  gather_facts: true
+  roles: 
+    - kubernetes
+
+- name: Master Nodes Configuration
+  hosts: master_nodes
+  connection: ssh
+  become: yes
+  gather_facts: true
+  roles:
+    - master_nodes
+
+- name: Worker Nodes Configuration
+  hosts: worker_nodes
+  connection: ssh
+  become: yes
+  gather_facts: true
+  roles:
+    - worker_nodes
+
+- name: Localhost Configuration
+  hosts: 127.0.0.1
+  gather_facts: false
+  become: false
+  roles:
+    - k8s-configuration
