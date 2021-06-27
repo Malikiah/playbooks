@@ -1,10 +1,10 @@
-- name: Security Playbook
-  become: yes
-  import_playbook: security_playbook.yaml
+# - name: Security Playbook
+#   become: yes
+#   import_playbook: security_playbook.yaml
 
-- name: NFS Playbook
-  become: yes
-  import_playbook: nfs_playbook.yaml
+# - name: NFS Playbook
+#   become: yes
+#   import_playbook: nfs_playbook.yaml
 
 - name: Kubernetes Playbook
   become: yes
